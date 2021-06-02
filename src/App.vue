@@ -1,30 +1,49 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="content">
+    <Menu/>
+    <div class="datos">
+      <Datos nombre='Mónica' apellidos='Dorta Escobar'/>
+      <Educacion/>
+      <Experiencia/>
+      <Aptitudes/>
+    </div>
   </div>
-  <router-view/>
 </template>
 
-<style>
+<script>
+//import HelloWorld from './components/HelloWorld.vue'
+import Datos from './components/Datos.vue'
+import Menu from './components/Menu.vue'
+import Educacion from './components/Educacion.vue'
+import Experiencia from './components/Experiencia.vue'
+import Aptitudes from './components/Aptitudes.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Datos,
+    Menu,
+    Educacion,
+    Experiencia,
+    Aptitudes
+  }
+}
+</script>
+
+<style lang="scss" scope>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.content{
+  display: flex;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.datos{
+  height: 100vh;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
