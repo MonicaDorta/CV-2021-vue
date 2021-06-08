@@ -4,8 +4,8 @@
     <h2>Desarrolladora Web <span> · </span> 662 118 579 <span> · </span> monicadortaescobar@gmail.com</h2>
     <p>Me considero una persona creativa, perfeccionista y curiosa, con ganas de aprender cosas nuevas que me ayuden a desempeñar mi trabajo de la mejor manera posible. Soy una programadora Junior trabajadora, con recursos, sociable y con capacidad para trabajar en equipo.</p>
     <div class="redes">
-        <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
+        <a class="social-icon" href="https://www.linkedin.com/in/m%C3%B3nica-dorta-escobar-b87370160/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-icon" href="https://github.com/MonicaDorta" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </div>
 </template>
