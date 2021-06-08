@@ -1,30 +1,28 @@
 <template>
   <div class="container" id="educacion">
       <h1>Educación</h1>
-      <div class="estudio">
-        <h2>IES La Laboral de La Laguna</h2>
-        <h3>Finalizado en 2011</h3>    
-        <p>Bachillerato científico-tecnológico.</p>
+      <div v-for="item in items" :key="item">
+        <div class="estudio">
+          <h2>{{item.centro}}</h2>
+          <h3>{{item.fecha}}</h3>    
+          <p>{{item.estudio}}</p>
+        </div>
+        <hr>
       </div>
-      <hr>
-      <div class="estudio">
-        <h2>CIFP César Manrique</h2>
-        <h3>Finalizado en 2019</h3>    
-        <p>Ciclo Superior en Desarrollo de aplicaciones Web de manera presencial.</p>
-      </div>
-      <hr>
-      <div class="estudio">
-        <h2>CIP La Laguna</h2>
-        <h3>Finalizado en 2020</h3>    
-        <p>Finalización del Ciclo Superior en Desarrollo de aplicaciones Web a distancia.</p>
-      </div>    
   </div>
 </template>
 
 <script>
 export default {
     name: 'Datos',
-    props: {
+    data(){
+      return{
+        items: [
+          {centro: 'IES La Laboral de La Laguna', fecha: 'Finalizado en 2011', estudio: 'Bachillerato científico-tecnológico.'},
+          {centro: 'CIFP César Manrique', fecha: 'Finalizado en 2019', estudio: 'Ciclo Superior en Desarrollo de aplicaciones Web de manera presencial.'},
+          {centro: 'CIP La Laguna', fecha: 'Finalizado en 2020', estudio: 'Finalización del Ciclo Superior en Desarrollo de aplicaciones Web a distancia.'}
+        ]
+      }
     }
 }
 </script>

@@ -1,50 +1,60 @@
 <template>
   <div class="container" id="experiencia">
-      <h1>Experiencia laboral</h1>
+    <h1>Experiencia laboral</h1>
+    <div v-for="item in items" :key="item">
       <div class="experiencia">
-        <h2>CARTELING.COM – Diseñadora gráfica</h2>
-        <h3>Junio 2018 – Febrero 2020</h3>  
-        <ul>
-            <li>Desarrollo de cartelería en cada una de sus fases, desde el diseño hasta su producción.</li>
-            <li>Labores administrativas y atención al cliente.</li>
-            <li>Desempeño en la página web para la introducción de productos.</li>
+        <h2>{{item.empresa}}</h2>
+        <h3>{{item.fecha}}</h3>  
+        <ul v-for="tarea in item.tareas" :key="tarea">
+            <li>{{tarea}}</li>              
         </ul>  
       </div>
       <hr>
-      <div class="experiencia">
-        <h2>STV CANARIAS – Desarrolladora Web</h2>
-        <h3>Septiempre 2020 – Noviembre 2020</h3>    
-        <ul>
-            <li>Becaria en el departamento de coordinación.</li>
-            <li>Coordinación de equipo y call center.</li>
-            <li>Desarrollo de herramientas que facilitan el trabajo del departamento en PHP.</li>
-        </ul>
-      </div>
-      <hr>
-      <div class="experiencia">
-        <h2>AONIA SOFTWARE S.L – Técnica informática</h2>
-        <h3>Noviembre 2020 – Febrero 2021</h3>   
-        <ul>
-            <li>Desarrollo de herramientas educativas (SCORM).</li>
-            <li>Creación de minijuegos infantiles en JavaScript.</li>
-        </ul> 
-      </div>  
-      <hr>
-      <div class="experiencia">
-        <h2>ADVENTUREES ALLIANCE S.L – Técnica informática</h2>
-        <h3>Febrero 2020 – Marzo 2021</h3>    
-        <ul>
-            <li>Maquetación de páginas web en Adobe XD.</li>
-            <li>Desarrollo Front-end con Vue.js.</li>
-        </ul>
-      </div>   
+    </div>
   </div>
 </template>
 
 <script>
 export default {
     name: 'Datos',
-    props: {
+    data(){
+      return{
+        items: [
+          {
+            empresa: 'CARTELING.COM – Diseñadora gráfica', 
+            fecha: 'Junio 2018 – Febrero 2020', 
+            tareas:[
+              'Desarrollo de cartelería en cada una de sus fases, desde el diseño hasta su producción.', 
+              'Labores administrativas y atención al cliente.',
+              'Desempeño en la página web para la introducción de productos.'] 
+          },
+          {
+            empresa: 'STV CANARIAS – Desarrolladora Web', 
+            fecha: 'Septiempre 2020 – Noviembre 2020', 
+            tareas:[
+              'Becaria en el departamento de coordinación.',
+              'Coordinación de equipo y call center.',
+              'Desarrollo de herramientas que facilitan el trabajo del departamento en PHP.'
+            ]
+          },
+          {
+            empresa: 'AONIA SOFTWARE S.L – Técnica informática', 
+            fecha: 'Noviembre 2020 – Febrero 2021', 
+            tareas:[
+              'Desarrollo de herramientas educativas (SCORM).',
+              'Creación de minijuegos infantiles en JavaScript.'
+            ] 
+          },
+          {
+            empresa: 'ADVENTUREES ALLIANCE S.L – Técnica informática', 
+            fecha: 'Febrero 2020 – Marzo 2021', 
+            tareas:[
+              'Maquetación de páginas web en Adobe XD.',
+              'Desarrollo Front-end con Vue.js.'
+            ] 
+          }
+        ]
+      }
     }
 }
 </script>

@@ -6,6 +6,7 @@
       <Educacion/>
       <Experiencia/>
       <Aptitudes/>
+      <Proyectos/>
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ import Menu from './components/Menu.vue'
 import Educacion from './components/Educacion.vue'
 import Experiencia from './components/Experiencia.vue'
 import Aptitudes from './components/Aptitudes.vue'
+import Proyectos from './components/Proyectos.vue'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     Menu,
     Educacion,
     Experiencia,
-    Aptitudes
+    Aptitudes,
+    Proyectos
   }
 }
 </script>
