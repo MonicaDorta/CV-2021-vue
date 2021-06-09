@@ -13,12 +13,12 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import Datos from './components/Datos.vue'
-import Menu from './components/Menu.vue'
-import Educacion from './components/Educacion.vue'
-import Experiencia from './components/Experiencia.vue'
-import Aptitudes from './components/Aptitudes.vue'
-import Proyectos from './components/Proyectos.vue'
+import Datos from './views/Datos.vue'
+import Menu from './views/Menu.vue'
+import Educacion from './views/Educacion.vue'
+import Experiencia from './views/Experiencia.vue'
+import Aptitudes from './views/Aptitudes.vue'
+import Proyectos from './views/Proyectos.vue'
 
 export default {
   name: 'App',
@@ -48,5 +48,20 @@ export default {
 .datos{
   height: 100vh;
 }
+
+.container{
+    margin-left: 20rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    min-height: 100vh; 
+
+    h1 {
+        text-transform: uppercase;
+        font-weight: 650;
+        font-size: 4rem;
+        color:#343a40;
+        margin-bottom: 4rem;
+        padding-top:8rem;
+    }  
+  }
 
 </style>

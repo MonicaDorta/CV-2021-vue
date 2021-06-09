@@ -1,24 +1,24 @@
 <template>
   <div class="container" id="experiencia">
-    <h1>Experiencia laboral</h1>
-    <div v-for="item in items" :key="item">
-      <div class="experiencia">
-        <h2>{{item.empresa}}</h2>
-        <h3>{{item.fecha}}</h3>  
-        <ul v-for="tarea in item.tareas" :key="tarea">
-            <li>{{tarea}}</li>              
-        </ul>  
+      <h1>Experiencia Laboral</h1>
+      <div v-for="item in items" :key="item">
+        <Listado :cat="categoria" :titulo="item.empresa" :subtitulo="item.fecha" :contenido="item.tareas"/>
+        <hr>
       </div>
-      <hr>
-    </div>
   </div>
 </template>
 
 <script>
+import Listado from '../components/Listado.vue'
+
 export default {
-    name: 'Datos',
+    name: 'Experiencia',
+    components: {
+      Listado
+    },
     data(){
       return{
+        categoria:'experiencia',
         items: [
           {
             empresa: 'CARTELING.COM – Diseñadora gráfica', 
@@ -60,45 +60,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .container{
-    margin-left: 20rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    min-height: 100vh; 
-
-    h1 {
-        text-transform: uppercase;
-        font-weight: 650;
-        font-size: 4rem;
-        color:#343a40;
-        margin-bottom: 4rem;
-        padding-top:8rem;
-    }  
-
-    .experiencia{
-        margin: 3rem;
-        h2{
-            line-height: 0;
-            font-size: 2rem;
-            color:#343a40;
-
-            span{
-                color: cadetblue;
-                font-weight: 600;
-                font-size: 1.2rem;
-                margin: 0.3rem;
-            }
-        }
-
-        h3{
-            color: cadetblue;
-            font-size: 1rem;
-        }
-
-        li{
-            color:#7c7e80;
-            font-size: 1.5rem;
-            width: 70%;
-        }
-    }
-  }
+  
 </style>  

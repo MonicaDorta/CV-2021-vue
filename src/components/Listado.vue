@@ -1,34 +1,27 @@
 <template>
-  <div class="container" id="educacion">
-      <h1>Educación</h1>
-      <div v-for="item in items" :key="item">
-        <div class="estudio">
-          <h2>{{item.centro}}</h2>
-          <h3>{{item.fecha}}</h3>    
-          <p>{{item.estudio}}</p>
-        </div>
-        <hr>
-      </div>
+  <div v-bind:class="cat">
+    <h2>{{titulo}}</h2>
+    <h3>{{subtitulo}}</h3>  
+    <ul v-for="cont in contenido" :key="cont">
+        <li>{{cont}}</li>              
+    </ul>  
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Datos',
-    data(){
-      return{
-        items: [
-          {centro: 'IES La Laboral de La Laguna', fecha: 'Finalizado en 2011', estudio: 'Bachillerato científico-tecnológico.'},
-          {centro: 'CIFP César Manrique', fecha: 'Finalizado en 2019', estudio: 'Ciclo Superior en Desarrollo de aplicaciones Web de manera presencial.'},
-          {centro: 'CIP La Laguna', fecha: 'Finalizado en 2020', estudio: 'Finalización del Ciclo Superior en Desarrollo de aplicaciones Web a distancia.'}
-        ]
-      }
-    }
+    name: 'Listado',
+    props: {
+        titulo: String,
+        subtitulo: String,
+        contenido: String,
+        cat:String
+    }    
 }
 </script>
 
 <style lang="scss" scoped>
-  .container{
+ .container{
     margin-left: 20rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     min-height: 100vh; 
@@ -42,10 +35,9 @@ export default {
         padding-top:8rem;
     }  
 
-    .estudio{
+    .experiencia, .estudio{
         margin: 3rem;
         h2{
-            text-transform: uppercase;
             line-height: 0;
             font-size: 2rem;
             color:#343a40;
@@ -63,7 +55,7 @@ export default {
             font-size: 1rem;
         }
 
-        p{
+        li{
             color:#7c7e80;
             font-size: 1.5rem;
             width: 70%;
